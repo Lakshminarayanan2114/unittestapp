@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evaluation Result</title>
+</head>
+<body>
+    <h2>Results</h2>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    {% if report %}
+        <p><strong>Score: {{ report.score }} / {{ report.max_score }}</strong></p>
+        <h3>Details:</h3>
+        <ul>
+        {% for item in report.details %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <br>
+    <a href="/">Upload another file</a>
+</body>
+</html>
